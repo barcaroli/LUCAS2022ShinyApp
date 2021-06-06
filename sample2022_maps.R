@@ -22,9 +22,14 @@ library(leafpop)
 
 
 # Load data
-load("sample_LUCAS.RData")
-samptot <- samptot[order(paste0(samptot$NUTS0,samptot$NUTS2)),]
-samp_sf <- st_as_sf(samptot, coords = c("LON", "LAT"),
+# load("sample_LUCAS.RData")
+# samptot <- samptot[order(paste0(samptot$NUTS0,samptot$NUTS2)),]
+# samp_sf <- st_as_sf(samptot, coords = c("X_LAEA", "Y_LAEA"),
+#                     crs=" +proj=laea +lat_0=52 +lon_0=10 +x_0=4321000 +y_0=3210000 +ellps=GRS80 +units=m +no_defs ")
+
+load("LUCAS_sample.RData")
+samp <- samp[order(paste0(samp$NUTS0,samp$NUTS2)),]
+samp_sf <- st_as_sf(samp, coords = c("X_LAEA", "Y_LAEA"),
                     crs=" +proj=laea +lat_0=52 +lon_0=10 +x_0=4321000 +y_0=3210000 +ellps=GRS80 +units=m +no_defs ")
 samp_sf$LC <- as.factor(samp_sf$LC)
 levels(samp_sf$LC) <- LETTERS[1:8]
@@ -40,13 +45,13 @@ ui <- fluidPage(theme = shinytheme("lumen"),
                                             "OpenTopoMap"),
                                 selected = "OpenStreetMap"),
                     # Select countries and regions
-                    selectInput(inputId = "Country", label = strong("Country (NUTS0)"),
-                                choices = levels(samp_sf$NUTS0),
-                                selected = "AT"),
+                    # selectInput(inputId = "Country", label = strong("Country (NUTS0)"),
+                    #             choices = unique(samp_sf$NUTS0),
+                    #             selected = "AT"),
                     selectInput(inputId = "Region", label = strong("Region (NUTS2)"),
                                 choices = unique(samp_sf$NUTS2),
                                 selected = "AT11"),
-                    selectInput(inputId = "ObsType", label = strong("Observation type"),
+                    selectInput(inputId = "ObsType", label = strong("Observation type (Field/PI)"),
                                 choices = c("All values"="all",
                                             "Field"="FI",
                                             "Photo-Interpreted"="PI"),
@@ -93,10 +98,10 @@ server <- function(input, output, session) {
   observeEvent(input$do, {
     # Subset data
     selected_sample <- reactive({
-      req(input$Country)
-      validate(need(!is.na(input$Country) & (input$Country %in% levels(as.factor(samp_sf$NUTS0))), "Error: Please provide a valid country code"))
-      req(input$Region)
-      validate(need(!is.na(input$Region) & (input$Region %in% levels(as.factor(samp_sf$NUTS2))), "Error: Please provide  valid region code"))
+      # req(input$Country)
+      # validate(need(!is.na(input$Country) & (input$Country %in% levels(as.factor(samp_sf$NUTS0))), "Error: Please provide a valid country code"))
+      # req(input$Region)
+      validate(need( (input$Region %in% levels(as.factor(samp_sf$NUTS2))), "Error: Please provide  valid region code"))
       req(input$ObsType)
       validate(need(!is.na(input$ObsType), "Error: Please provide  valid observation type code"))
       req(input$var)
@@ -106,18 +111,18 @@ server <- function(input, output, session) {
       samp <- samp_sf
       if (input$ObsType == "all") 
         if (input$value == "all") 
-          samp[samp$NUTS0 == input$Country & samp$NUTS2 == input$Region,]
+          samp[samp$NUTS2 == input$Region,]
         else
         if (input$var == "LC")
-          samp[samp$NUTS0 == input$Country & samp$NUTS2 == input$Region & samp$LC == input$value, ]
+          samp[samp$NUTS2 == input$Region & samp$LC == input$value, ]
         else
-          samp[samp$NUTS0 == input$Country & samp$NUTS2 == input$Region & samp$LU == input$value, ]
+          samp[samp$NUTS2 == input$Region & samp$LU == input$value, ]
       else 
         if (input$value == "all") 
-          samp[samp$PI == input$ObsType & samp$NUTS0 == input$Country & samp$NUTS2 == input$Region, ]
+          samp[samp$PI == input$ObsType & samp$NUTS2 == input$Region, ]
         else
           if (input$var == "LC")
-            samp[samp$PI == input$ObsType & samp$NUTS0 == input$Country & samp$NUTS2 == input$Region & samp$LC == input$value, ]
+            samp[samp$PI == input$ObsType & samp$NUTS2 == input$Region & samp$LC == input$value, ]
           # else
           #   samp[samp$PI == input$ObsType & samp$NUTS0 == input$Country & samp$NUTS2 == input$Region & samp$LU == input$value, ]
     })
