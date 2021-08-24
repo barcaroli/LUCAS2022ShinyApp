@@ -22,7 +22,7 @@ points in LUCAS 2022 in maps by NUTS0 and NUTS2
       - install R
 2.  Look for the path where R is installed, for example:
 
-C:Files.5
+C:\Program Files\R\R-4.1.0
 
 3.  Edit the sample2022\_maps.bat, it appears:
 
