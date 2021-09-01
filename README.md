@@ -15,9 +15,9 @@ points in LUCAS 2022 in maps by NUTS0 and NUTS2
 
 - click on "Code" and choose the "Download zip" option
 
-- download and expand the zip in a new folder (for instance:
+- download and expand the zip in a new folder, for instance:
 
-      “C:\\Users\\username\\Documents\\LUCAS sample”) 
+      “C:\\Users\\username\\Documents\\LUCAS sample”
 
 
 
