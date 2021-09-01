@@ -34,7 +34,7 @@ points in LUCAS 2022 in maps by NUTS0 and NUTS2
 5.  Edit the sample2022\_maps.bat, it appears:
 
 “C:\\Program Files\\R\\R-4.0.5\\bin\\Rscript.exe” -e
-"shiny::runApp(‘C:\\…rest of the path…\\sample2022\_maps.R’,
+"shiny::runApp(‘C:\\\\…rest of the path…\\\\sample2022\\\\_maps.R’,
 launch.browser = TRUE)
 
 If necessary:
