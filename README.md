@@ -13,9 +13,9 @@ points in LUCAS 2022 in maps by NUTS0 and NUTS2
 
 1.  From the github repository <https://github.com/barcaroli/LUCAS2022ShinyApp> 
 
-- click on "Code" and choose the "Download zip" option.
+- click on "Code" and choose the "Download zip" option
 
-- expand the zip in a new folder (for instance:
+- download and expand the zip in a new folder (for instance:
 
       “C:\\Users\\username\\Documents\\LUCAS sample”) 
 
