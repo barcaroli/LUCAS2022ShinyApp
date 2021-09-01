@@ -21,17 +21,17 @@ points in LUCAS 2022 in maps by NUTS0 and NUTS2
 
 
 
-1.  If not yet installed, download and install R on your computer:
+2.  If not yet installed, download and install R on your computer:
       - go to
         <https://cran.rstudio.com/bin/windows/base/R-4.0.5-win.exe>
       - install R
-2.  From R, install the "shiny" package:
+3.  From R, install the "shiny" package:
       - install.packages("shiny")
-3.  Look for the path where R is installed, for example:
+4.  Look for the path where R is installed, for example:
 
-C:\Program Files\R\R-4.1.0
+      - C:\Program Files\R\R-4.1.0
 
-3.  Edit the sample2022\_maps.bat, it appears:
+5.  Edit the sample2022\_maps.bat, it appears:
 
 “C:\\Program Files\\R\\R-4.0.5\\bin\\Rscript.exe” -e
 "shiny::runApp(‘C:\\…rest of the path…\\sample2022\_maps.R’,
@@ -45,7 +45,7 @@ installed);
 - modify the path of the folder where the files have
 been downloaded. ATTENTION: IN THIS PATH YOU NEED THE DOUBLE SLASH \\
 
-4.  Save and execute the .bat clicking twice on it
+6.  Save and execute the .bat clicking twice on it
 
 # 
 
