@@ -49,7 +49,7 @@ been downloaded. ATTENTION: IN THIS PATH YOU NEED THE DOUBLE SLASH \\
 
 # 
 
-Attention: if when running the first time, after pressing the ‘Click
+Attention: sometimes, when running the first time, after pressing the ‘Click
 button’, it may appear the error message:
 
 Couldn’t normalize path in `addResourcePath`, with arguments: `prefix` =
