@@ -23,8 +23,8 @@ points in LUCAS 2022 in maps by NUTS0 and NUTS2
 
 2.  If not yet installed, download and install R on your computer:
       - go to
-        <https://cran.rstudio.com/bin/windows/base/R-4.0.5-win.exe>
-      - install R
+        <https://cran.rstudio.com/bin/windows/base/>
+      - download and install R
 3.  From R, install the "shiny" package:
       - install.packages("shiny")
 4.  Look for the path where R is installed, for example:
