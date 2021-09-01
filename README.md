@@ -43,7 +43,7 @@ If necessary:
 installed);
 
 - modify the path of the folder where the files have
-been downloaded. ATTENTION: IN THIS PATH YOU NEED THE DOUBLE SLASH "\\"
+been downloaded. ATTENTION: IN THIS PATH YOU NEED THE DOUBLE SLASH "\\\"
 
 6.  Save and execute the .bat clicking twice on it
 
