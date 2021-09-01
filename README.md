@@ -37,11 +37,11 @@ launch.browser = TRUE)
 
 If necessary:
 
-modify the path of the Rscript.exe (it depends on the last version of R
+- modify the path of the Rscript.exe (it depends on the last version of R
 installed);
 
-indicate the username in the path of the folder where the files have
-been downloaded.
+- modify the path of the folder where the files have
+been downloaded. ATTENTION: IN THIS PATH YOU NEED THE DOUBLE SLASH \\
 
 4.  Save and execute the .bat clicking twice on it
 
