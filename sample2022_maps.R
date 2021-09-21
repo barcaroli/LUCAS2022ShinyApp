@@ -63,7 +63,7 @@ ui <- fluidPage(theme = shinytheme("lumen"),
                     # Only show this panel if the variable is Land Cover
                     conditionalPanel(
                       condition = "input.var == 'LC'",
-                      selectInput(inputId = "value", label = "Select values of Land Cover:",
+                      selectInput(inputId = "value_LC", label = "Select values of Land Cover:",
                                   choices = c("All values"="all",
                                               "Artificial"="A",
                                               "Cropland"="B",
@@ -76,16 +76,16 @@ ui <- fluidPage(theme = shinytheme("lumen"),
                                   selected = "")
                     ),
                     # Only show this panel if the variable is Land Use
-                    # conditionalPanel(
-                    #   condition = "input.var == 'LU'",
-                    #   selectInput(inputId = "value", label = "Select values of Land Use:",
-                    #               choices = c("All values"="all",
-                    #                           "Primary Sector"="U1",
-                    #                           "Secondary Sector"="U2",
-                    #                           "Tertiary Sector"="U3",
-                    #                           "Abandoned or unused areas"="U4"),
-                    #               selected = "")
-                    # ),
+                    conditionalPanel(
+                      condition = "input.var == 'LU'",
+                      selectInput(inputId = "value_LU", label = "Select values of Land Use:",
+                                  choices = c("All values"="all",
+                                              "Primary Sector"="U1",
+                                              "Secondary Sector"="U2",
+                                              "Tertiary Sector"="U3",
+                                              "Abandoned or unused areas"="U4"),
+                                  selected = "")
+                    ),
                     actionButton("do", "Click button"),
                     width = 3),
                 # Output
@@ -106,25 +106,52 @@ server <- function(input, output, session) {
       validate(need(!is.na(input$ObsType), "Error: Please provide  valid observation type code"))
       req(input$var)
       validate(need(!is.na(input$var), "Error: Please provide  valid variable name"))
-      req(input$value)
-      validate(need(!is.na(input$var), "Error: Please provide  valid value"))
+      req(input$value_LC)
+      validate(need(!is.na(input$value_LC), "Error: Please provide  valid LC value"))
+      req(input$value_LU)
+      validate(need(!is.na(input$value_LU), "Error: Please provide  valid LU value"))
       samp <- samp_sf
-      if (input$ObsType == "all") 
-        if (input$value == "all") 
+      # if (input$ObsType == "all") 
+      #   if (input$value == "all") 
+      #     samp[samp$NUTS2 == input$Region,]
+      #   else
+      #   if (input$var == "LC")
+      #     samp[samp$NUTS2 == input$Region & samp$LC == input$value, ]
+      #   else
+      #     samp[samp$NUTS2 == input$Region & samp$LU == input$value, ]
+      # else 
+      #   if (input$value == "all") 
+      #     samp[samp$PI == input$ObsType & samp$NUTS2 == input$Region, ]
+      #   else
+      #     if (input$var == "LC")
+      #       samp[samp$PI == input$ObsType & samp$NUTS2 == input$Region & samp$LC == input$value, ]
+      #     else
+      #       samp[samp$PI == input$ObsType & samp$NUTS0 == input$Country & samp$NUTS2 == input$Region & samp$LU == input$value, ]
+      if (input$ObsType == "all" & input$var == "LC" & input$value_LC == "all")
           samp[samp$NUTS2 == input$Region,]
-        else
-        if (input$var == "LC")
-          samp[samp$NUTS2 == input$Region & samp$LC == input$value, ]
-        else
-          samp[samp$NUTS2 == input$Region & samp$LU == input$value, ]
-      else 
-        if (input$value == "all") 
-          samp[samp$PI == input$ObsType & samp$NUTS2 == input$Region, ]
-        else
-          if (input$var == "LC")
-            samp[samp$PI == input$ObsType & samp$NUTS2 == input$Region & samp$LC == input$value, ]
-          # else
-          #   samp[samp$PI == input$ObsType & samp$NUTS0 == input$Country & samp$NUTS2 == input$Region & samp$LU == input$value, ]
+      else
+      if (input$ObsType == "all" & input$var == "LU" & input$value_LU == "all")
+          samp[samp$NUTS2 == input$Region,]
+      else
+      if (input$ObsType != "all" & input$var == "LC" & input$value_LC == "all")
+          samp[samp$NUTS2 == input$Region  & samp$PI == input$ObsType,]
+      else
+      if (input$ObsType != "all" & input$var == "LU" & input$value_LU == "all")
+          samp[samp$NUTS2 == input$Region  & samp$PI == input$ObsType,]
+      else
+      if (input$ObsType == "all" & input$value_LC != "all" & input$var == "LC")
+          samp[samp$NUTS2 == input$Region & samp$LC == input$value_LC,]
+      else
+      if (input$ObsType == "all" & input$value_LU != "all" & input$var == "LU")
+          samp[samp$NUTS2 == input$Region & samp$LU == input$value_LU,]
+      else
+      if (input$ObsType != "all" & input$value_LC != "all" & input$var == "LC")
+          samp[samp$NUTS2 == input$Region & samp$LC == input$value_LC & samp$PI == input$ObsType,]
+      else
+      if (input$ObsType != "all" & input$value_LU != "all" & input$var == "LU")
+          samp[samp$NUTS2 == input$Region & samp$LU == input$value_LU & samp$PI == input$ObsType,]
+      
+      
     })
     # Pull the map
     output$map <- renderLeaflet({
