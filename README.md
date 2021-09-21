@@ -59,7 +59,7 @@ then do:
 
   - access the folder
 
-C:\_name-library\\4.0
+C:\_name-R-library_\\4.0
 
 and copy there the folder “popup” (available with the other files in the
 distribution) and re-run the sample2022\_maps.bat
