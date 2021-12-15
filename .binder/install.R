@@ -1,5 +1,6 @@
 install.packages("shiny")
 install.packages("shinythemes")
+install.packages("s2")
 install.packages("sf")
 install.packages("mapview")
 install.packages("leaflet")
