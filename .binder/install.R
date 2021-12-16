@@ -1,4 +1,4 @@
-install.packages("devtools")
+install.packages("devtools",repos="https://cloud.r-project.org")
 devtools::install_github("RStudio/shiny")
 devtools::install_github("RStudio/shinythemes")
 devtools::install_github("RStudio/shinydashboard")
