@@ -1,6 +1,7 @@
 install.packages("shiny",repos="https://cloud.r-project.org")
 install.packages("shinythemes",repos="https://cloud.r-project.org")
 install.packages("shinydashboard",repos="https://cloud.r-project.org")
+install.packages("udunits2",repos="https://cloud.r-project.org")
 install.packages("units",repos="https://cloud.r-project.org")
 install.packages("sf",repos="https://cloud.r-project.org")
 install.packages("mapview",repos="https://cloud.r-project.org")
