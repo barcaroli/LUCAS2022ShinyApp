@@ -1,4 +1,4 @@
 libudunits2-dev 
-libgdal-dev3 
-libgeos-dev3 
-libproj-dev7
+libgdal-dev 
+libgeos-dev 
+libproj-dev
