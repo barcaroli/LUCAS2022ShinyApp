@@ -1,11 +1,4 @@
-<<<<<<< HEAD
 libudunits2-dev 
 libgdal-dev 
 libgeos-dev 
 libproj-dev
-=======
-libudunits2-dev
-libgdal-dev 
-libgeos-dev 
-libproj-dev
->>>>>>> c82d5d2a5d5946188d07c5a32bd265c3031b8088
