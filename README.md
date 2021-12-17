@@ -11,6 +11,13 @@ points in LUCAS 2022 in maps by NUTS0 and NUTS2
 
 ################################################################# 
 
+Launch RStudio and from here run the scripts of interest
+
+RStudio:
+[![Binder](http://mybinder.org/badge_logo.svg)](http://mybinder.org/v2/gh/barcaroli/LUCAS2022ShinyApp/HEAD?urlpath=rstudio)
+
+################################################################# 
+
 Launch Jupyter notebook for LUCAS selected points:
 
 Jupyter notebook:
