@@ -1,10 +1,4 @@
 libudunits2-dev 
-<<<<<<< HEAD
-libgdal-dev3 
-libgeos-dev3 
-libproj-dev7
-=======
 libgdal-dev 
 libgeos-dev 
 libproj-dev
->>>>>>> ef9d8081a1b153bbabb47d4d483337891c4a734f
