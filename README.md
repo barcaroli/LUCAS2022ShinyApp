@@ -11,14 +11,23 @@ points in LUCAS 2022 in maps by NUTS0 and NUTS2
 
 ################################################################# 
 
-Launch RStudio and from here run the scripts of interest
+Launch RStudio and from here run the scripts of interest.
 
-RStudio:
+When in RStudio, from the “Files” pane select:
+
+-   “sample2022\_maps.R” for visualising LUCAS sample;
+
+-   “sample2022\_maps\_modules.R” for visualising LUCAS modules
+    sub-samples.
+
+To activate, press the “launch binder” button:
+
 [![Binder](http://mybinder.org/badge_logo.svg)](http://mybinder.org/v2/gh/barcaroli/LUCAS2022ShinyApp/HEAD?urlpath=rstudio)
 
 ################################################################# 
 
-Launch Jupyter notebook for LUCAS selected points:
+Launch Jupyter notebook for LUCAS selected points (still in
+construction):
 
 Jupyter notebook:
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/barcaroli/LUCAS2022ShinyApp/HEAD?filepath=LUCAS_selected_points.ipynb)
@@ -31,8 +40,9 @@ Jupyter notebook:
 
 ################################################################# 
 
-IF Jupyter notebooks do not work
-\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+Installation on your computer
+
+################################################################# 
 
 1.  From the github repository <https://github.com/barcaroli/LUCAS2022>
     download the whole repository in a new folder (for instance:
