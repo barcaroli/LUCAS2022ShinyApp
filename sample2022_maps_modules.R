@@ -20,9 +20,33 @@ library(mapview)
 library(leaflet)
 library(leafpop)
 
-load("modules.RData")
+load("modules_samples.RData")
 countries <- unique(copernicus$NUTS0)
 
+copernicus <- st_as_sf(copernicus, coords = c("X_LAEA", "Y_LAEA"),
+                    crs=" +proj=laea +lat_0=52 +lon_0=10 +x_0=4321000 +y_0=3210000 +ellps=GRS80 +units=m +no_defs ")
+copernicus$LC <- as.factor(copernicus$LC)
+copernicus$LU <- as.factor(copernicus$LU)
+
+grassland <- st_as_sf(grassland, coords = c("X_LAEA", "Y_LAEA"),
+                    crs=" +proj=laea +lat_0=52 +lon_0=10 +x_0=4321000 +y_0=3210000 +ellps=GRS80 +units=m +no_defs ")
+grassland$LC <- as.factor(grassland$LC)
+grassland$LU <- as.factor(grassland$LU)
+
+grassland_extended <- st_as_sf(grassland_extended, coords = c("X_LAEA", "Y_LAEA"),
+                    crs=" +proj=laea +lat_0=52 +lon_0=10 +x_0=4321000 +y_0=3210000 +ellps=GRS80 +units=m +no_defs ")
+grassland_extended$LC <- as.factor(grassland_extended$LC)
+grassland_extended$LU <- as.factor(grassland_extended$LU)
+
+LF <- st_as_sf(LF, coords = c("X_LAEA", "Y_LAEA"),
+                    crs=" +proj=laea +lat_0=52 +lon_0=10 +x_0=4321000 +y_0=3210000 +ellps=GRS80 +units=m +no_defs ")
+LF$LC <- as.factor(LF$LC)
+LF$LU <- as.factor(LF$LU)
+
+soil <- st_as_sf(soil, coords = c("X_LAEA", "Y_LAEA"),
+                    crs=" +proj=laea +lat_0=52 +lon_0=10 +x_0=4321000 +y_0=3210000 +ellps=GRS80 +units=m +no_defs ")
+soil$LC <- as.factor(soil$LC)
+soil$LU <- as.factor(soil$LU)
 
 ui <- fluidPage(theme = shinytheme("lumen"),
                 titlePanel("LUCAS 2022 Modules"),
