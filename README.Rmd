@@ -64,7 +64,7 @@ download the whole repository in a new folder (for instance:
 "C:\\Users\\username\\Documents\\LUCAS sample")
 
 1. If not yet installed, download and install R on your computer:
-	- go to https://cran.rstudio.com/bin/windows/base/R-4.0.5-win.exe
+	- go to https://cran.rstudio.com/bin/windows/base/R-4.1.2-win.exe
 	- install R
 
 2. Look for the path where R is installed, for example: 
