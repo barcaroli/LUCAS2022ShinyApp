@@ -15,10 +15,14 @@ Launch RStudio and from here run the scripts of interest.
 
 When in RStudio, from the “Files” pane select:
 
--   “sample2022\_maps.R” for visualising LUCAS sample;
+-   “sample2022\_maps.R” for visualising LUCAS sample by NUTS2,
+    observation type, land cover and land use;
 
 -   “sample2022\_maps\_modules.R” for visualising LUCAS modules
-    sub-samples.
+    sub-samples selected points;
+
+-   “sample2022\_checkpoints.R” for visualising detailed information on
+    selected points.
 
 To activate, press the “launch binder” button:
 
