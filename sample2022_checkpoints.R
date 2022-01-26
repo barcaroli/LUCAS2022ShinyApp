@@ -22,6 +22,7 @@ library(leafpop)
 
 
 load("lucas_augmented.RData")
+colnames(samp)[names(samp)=="PI"] <- "OBS_TYPE"
 samp <- samp[order(paste0(samp$NUTS0,samp$NUTS2)),]
 samp_sf <- st_as_sf(samp, coords = c("X_LAEA", "Y_LAEA"),
                     crs=" +proj=laea +lat_0=52 +lon_0=10 +x_0=4321000 +y_0=3210000 +ellps=GRS80 +units=m +no_defs ")
