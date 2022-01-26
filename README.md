@@ -55,7 +55,7 @@ Installation on your computer
 
 1.  If not yet installed, download and install R on your computer:
     -   go to
-        <https://cran.rstudio.com/bin/windows/base/R-4.0.5-win.exe>
+        <https://cran.rstudio.com/bin/windows/base/R-4.1.2-win.exe>
     -   install R
 2.  Look for the path where R is installed, for example:
 
