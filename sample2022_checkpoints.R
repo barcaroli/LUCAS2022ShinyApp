@@ -46,11 +46,11 @@ ui <- fluidPage(theme = shinytheme("lumen"),
                     selectInput(inputId = "Region", label = strong("Region (NUTS2)"),
                                 choices = unique(samp_sf$NUTS2),
                                 selected = "AT11"),
-                    # selectInput(inputId = "ObsType", label = strong("Observation type (Field/PI)"),
-                    #             choices = c("All values"="all",
-                    #                         "Field"="FI",
-                    #                         "Photo-Interpreted"="PI"),
-                    #             selected = ""),
+                    selectInput(inputId = "ObsType", label = strong("Observation type (Field/PI)"),
+                                choices = c("All values"="all",
+                                            "Field"="FI",
+                                            "Photo-Interpreted"="PI"),
+                                selected = ""),
                     # selectInput(inputId = "var", label = strong("Variable of interest"),
                     #             choices = c("Land cover"="LC",
                     #                         "Land use"="LU"),
@@ -98,7 +98,7 @@ server <- function(input, output, session) {
       # req(input$Region)
       validate(need( (input$Region %in% levels(as.factor(samp_sf$NUTS2))), "Error: Please provide  valid region code"))
       # req(input$ObsType)
-      # validate(need(!is.na(input$ObsType), "Error: Please provide  valid observation type code"))
+      validate(need(!is.na(input$ObsType), "Error: Please provide  valid observation type code"))
       # req(input$var)
       # validate(need(!is.na(input$var), "Error: Please provide  valid variable name"))
       # req(input$value_LC)
@@ -122,7 +122,11 @@ server <- function(input, output, session) {
       #       samp[samp$PI == input$ObsType & samp$NUTS2 == input$Region & samp$LC == input$value, ]
       #     else
       #       samp[samp$PI == input$ObsType & samp$NUTS0 == input$Country & samp$NUTS2 == input$Region & samp$LU == input$value, ]
-      samp[samp$NUTS2 == input$Region,]
+      if (input$ObsType == "all") samp[samp$NUTS2 == input$Region,]
+      else
+      if (input$ObsType == "FI") samp[samp$NUTS2 == input$Region & samp$OBS_TYPE == "FI",]
+      else
+      if (input$ObsType == "PI") samp[samp$NUTS2 == input$Region & samp$OBS_TYPE == "PI",]
       # if (input$ObsType != "all") samp[samp$NUTS2 == input$Region & samp$PI == input$ObsType,]
       
       # if (input$ObsType == "all" & input$var == "LC" & input$value_LC == "all")
@@ -165,9 +169,9 @@ server <- function(input, output, session) {
         if (input$background == "OpenTopoMap")
           mapView(selected_sample(), map.types = c("OpenTopoMap"))@map
     })
-    output$desc <- renderText({
-      paste(trend_text, "The index is set to 1.0 on January 1, 2004 and is calculated only for US search traffic.")
-    })
+    # output$desc <- renderText({
+    #   paste(trend_text, "The index is set to 1.0 on January 1, 2004 and is calculated only for US search traffic.")
+    # })
   })
 }
 
