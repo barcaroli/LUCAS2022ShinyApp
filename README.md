@@ -15,32 +15,18 @@ Launch RStudio and from here run the scripts of interest.
 
 When in RStudio, from the “Files” pane select:
 
--   “sample2022\_maps.R” for visualising LUCAS sample by NUTS2,
+-   “sample2022_maps.R” for visualising LUCAS sample by NUTS2,
     observation type, land cover and land use;
 
--   “sample2022\_maps\_modules.R” for visualising LUCAS modules
+-   “sample2022_maps_modules.R” for visualising LUCAS modules
     sub-samples selected points;
 
--   “sample2022\_checkpoints.R” for visualising detailed information on
+-   “sample2022_checkpoints.R” for visualising detailed information on
     selected points.
 
 To activate, press the “launch binder” button:
 
 [![Binder](http://mybinder.org/badge_logo.svg)](http://mybinder.org/v2/gh/barcaroli/LUCAS2022ShinyApp/HEAD?urlpath=rstudio)
-
-################################################################# 
-
-Launch Jupyter notebook for LUCAS selected points (still in
-construction):
-
-Jupyter notebook:
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/barcaroli/LUCAS2022ShinyApp/HEAD?filepath=LUCAS_selected_points.ipynb)
-
-Launch Jupyter notebook for LUCAS modules (Copernicus, Grassland,
-Extended Grassland, Soil, Landscape Features) selected points:
-
-Jupyter notebook:
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/barcaroli/LUCAS2022ShinyApp/HEAD?filepath=LUCAS_modules_selected_points.ipynb)
 
 ################################################################# 
 
@@ -61,10 +47,10 @@ Installation on your computer
 
 C:Files.5
 
-3.  Edit the sample2022\_maps.bat, it appears:
+3.  Edit the sample2022_maps.bat, it appears:
 
 “C:\\Program Files\\R\\R-4.0.5\\bin\\Rscript.exe” -e
-"shiny::runApp(‘C:\\…rest of the path…\\sample2022\_maps.R’,
+“shiny::runApp(‘C:\\…rest of the path…\\sample2022_maps.R’,
 launch.browser = TRUE)
 
 If necessary:
@@ -92,4 +78,4 @@ then do:
 C:\_name-library\\4.0
 
 and copy there the folder “popup” (available with the other files in the
-distribution) and re-run the sample2022\_maps.bat
+distribution) and re-run the sample2022_maps.bat

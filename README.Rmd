@@ -41,18 +41,6 @@ To activate, press the "launch binder" button:
 
 #################################################################
 
-Launch Jupyter notebook for LUCAS selected points (still in construction):
-
-Jupyter notebook: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/barcaroli/LUCAS2022ShinyApp/HEAD?filepath=LUCAS_selected_points.ipynb)
-
-
-Launch Jupyter notebook for LUCAS modules (Copernicus, Grassland, Extended Grassland, Soil, Landscape Features) selected points:
-
-Jupyter notebook: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/barcaroli/LUCAS2022ShinyApp/HEAD?filepath=LUCAS_modules_selected_points.ipynb)
-
-
-#################################################################
-
 Installation on your computer
 
 #################################################################
