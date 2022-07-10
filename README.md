@@ -1,13 +1,12 @@
 
 <!-- README.md is generated from README.Rmd. Please edit README.Rmd file -->
 
-This shiny app allows to visualize interactively the points selected in
-the 2022 round of Eurostat Land Use and Land Cover Survey (LUCAS).
-
 ################################################################# 
 
-Instructions to install and launch the app for visualizing the sampled
-points in LUCAS 2022 in maps by NUTS0 and NUTS2
+# Shiny application to visualize LUCAS 2022 selected points
+
+This shiny app allows to interactively visualize the points selected in
+the 2022 round of Eurostat Land Use and Land Cover Survey (LUCAS).
 
 ################################################################# 
 
