@@ -16,23 +16,24 @@ knitr::opts_chunk$set(
 This shiny app allows to visualize interactively the points selected in the 2022 round of Eurostat Land Use and Land Cover Survey (LUCAS). 
 
 #################################################################
+
 Instructions to install and launch
-the app for visualising the sampled 
+the app for visualizing the sampled 
 points in LUCAS 2022 in maps
 by NUTS0 and NUTS2
 
 
 #################################################################
 
-Option 1: press the "launch binder" button:
+## Option 1: RStudio cloud
 
-[![Binder](http://mybinder.org/badge_logo.svg)](http://mybinder.org/v2/gh/barcaroli/LUCAS2022ShinyApp/HEAD?urlpath=rstudio)
+Access the RStudio cloud application:
 
-N.B. : sometimes it does not work, it depends on problems in Binder site
+https://rstudio.cloud/content/2918302
 
 #################################################################
 
-Option 2: Installation on your computer
+## Option 2: Installation on your computer
 
 Requirements: R and RStudio installed.
 
@@ -46,6 +47,8 @@ to download the whole repository in a new folder.
 Access the folder and launch RStudio.
 
 #################################################################
+
+## Execution
 
 In both options, when in RStudio, from the "Files" pane select:
 
