@@ -35,7 +35,8 @@ Access the folder and launch RStudio.
 
 ## Execution
 
-In both options, when in RStudio, from the “Files” pane select:
+In both options, when in RStudio from the “Files” pane select one of the
+following:
 
 -   “sample2022_maps.R” for visualizing LUCAS sample by NUTS2,
     observation type, land cover and land use;
@@ -44,4 +45,6 @@ In both options, when in RStudio, from the “Files” pane select:
     sub-samples selected points;
 
 -   “sample2022_checkpoints.R” for visualising detailed information on
-    selected points.
+    selected points,
+
+and click on the “RunApp” button.
